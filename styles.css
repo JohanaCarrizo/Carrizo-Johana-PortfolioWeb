@@ -114,22 +114,36 @@
   .entry ul{ list-style:none; display:flex; flex-direction:column; gap:7px; }
   .entry li{ font-size:14.5px; color:var(--muted); padding-left:16px; position:relative; }
   .entry li::before{ content:"›"; position:absolute; left:0; color:var(--mint); }
-  .subgroup{ margin-top:17px; }
+  .subgroup{ margin-top:18px; }
   .subgroup .sub{ margin-bottom:10px; }
 
   @media (max-width:640px){ .entry{ grid-template-columns:1fr; gap:6px; } }
 
   /* PROYECTOS */
+  .project-group{ margin-bottom:44px; }
+  .project-group:last-child{ margin-bottom:0; }
+  .group-head{ display:flex; align-items:baseline; gap:10px; margin-bottom:18px; flex-wrap:wrap; }
+  .group-head h3{ font-family:var(--font-mono); font-size:13px; color:var(--text); text-transform:uppercase; letter-spacing:.05em; }
+  .group-head .group-note{ font-size:13px; color:var(--muted); }
+
   .projects-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:22px; }
   .project-card{
     background:var(--surface); border:1px solid var(--line); border-radius:6px;
-    padding:24px; display:flex; flex-direction:column; gap:12px;
+    padding:24px; display:flex; flex-direction:column; gap:12px; position:relative;
   }
+  .project-card.sold{ border-color:var(--mint); }
+  .project-card.upcoming{ border-style:dashed; opacity:.85; }
   .project-card .ptag{
     font-family:var(--font-mono); font-size:11px; color:var(--amber);
     text-transform:uppercase; letter-spacing:.04em;
   }
-  .project-card h3{ font-family:var(--font-display); font-size:20px; font-weight:600; }
+  .project-card .badge{
+    position:absolute; top:18px; right:18px;
+    font-family:var(--font-mono); font-size:10.5px; color:#08131C;
+    background:var(--mint); padding:3px 9px; border-radius:20px; font-weight:500;
+  }
+  .project-card .badge.badge-soon{ background:transparent; border:1px solid var(--line); color:var(--muted); }
+  .project-card h3{ font-family:var(--font-display); font-size:20px; font-weight:600; padding-right:70px; }
   .project-card p{ font-size:14px; color:var(--muted); }
   .project-links{ display:flex; flex-direction:column; gap:6px; margin-top:auto; padding-top:6px; }
   .project-links a{
